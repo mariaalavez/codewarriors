@@ -1,5 +1,3 @@
-require 'byebug'
-
 def tax_calculator(total)
   r1 = 0.10
   r2 = 0.07
@@ -16,13 +14,13 @@ def tax_calculator(total)
       netto = (10 * r1) + (10 * r2) + ((total - 20) * r3)
     elsif total > 30
       netto = (10 * r1) + (10 * r2) + ( 10 * r3) + ((total- 30) * r_extra)
-    elsif total < 0
+    elsif total <= 0
       netto = r_invalid
     end
   else
-    netto = r_invalid
+    netto = 0
   end
   netto.round(2)
 end
 
- puts tax_calculator('adfs')
+ puts tax_calculator(0)
